@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration> 
+	
+	<typeAliases> <!--  자주 사용하는 DTO 를 이렇게 적어두는 방법 -->
+	  <typeAlias type="test.spring.bean.day3.TestDTO" alias="testDTO" />
+	  <typeAlias type="test.spring.bean.day4.BoardDataBean" alias="BoardDataBean" />
+	  <typeAlias type="test.spring.bean.day4.MemberDTO" alias="memberDTO" />
+	  
+	  <typeAlias type="test.spring.bean.day6.SnsDTO" alias="snsDTO" />
+	  <typeAlias type="test.spring.bean.day6.SnsImgDTO" alias="snsImgDTO" />
+	</typeAliases>
+	
+	
+	
+	<!--  SQL작성하는 공간(파일) mybatis에서 사용하는 sql파일은 모두 나열한다. -->
+	<mappers>
+	   <mapper resource="/sql/testSQL.xml" />
+	   <mapper resource="/sql/memberSQL.xml" />
+	   <mapper resource="/sql/boardSQL.xml" />
+	   
+	   <mapper resource="/sql/snsSQL.xml" />
+	</mappers>
+	
+</configuration>

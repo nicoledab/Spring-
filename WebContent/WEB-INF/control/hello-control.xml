@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:p="http://www.springframework.org/schema/p"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <!--  패키지 @controller, @service, @Repository 클래스를 스캔한다. 지금은 통들어서 service.  -->
+  <context:component-scan base-package="test.spring.bean" />
+  <context:component-scan base-package="mvc.bean" />
+  
+     <!-- 자바로 따지면 Date day = new date() 객체생성 -->
+     <!-- <jsp:useBean /> 같은 기능을 한다.  -->
+    <bean id="d" class="java.util.Date" /> 
+    
+    
+    <bean id="dto" class="test.spring.bean.DTO" /> 
+                       
+                            
+    <bean id="dto2" class="test.spring.bean.DTO" >
+       <property name="name" value="java" />
+       <property name="age" value="12" />
+       <property name="day" ref="d" />
+             </bean>
+  <!--  day는 기본형 변수가 아니라 참조형 변수여서 ref  -->
+  
+   <bean id="dto3" class="test.spring.bean.DTO" >
+       <constructor-arg value="test" />
+    </bean>
+  
+  
+   <bean id="dao" class="test.spring.bean.DAO" />
+   
+   
+   <!-- 0611 -->
+   <bean id="testImpl" class="test.spring.bean.day5.TestDAOImpl" />
+   
+   
+   <!-- 0614 -->
+   <bean id="snsDAOImpl" class="test.spring.bean.day6.SnsDAOImpl" />
+
+    
+</beans>

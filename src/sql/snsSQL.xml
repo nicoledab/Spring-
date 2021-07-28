@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sns">
+	
+	<select id="imgSeq" resultType="int">
+		select snsimg_seq.nextval from dual
+	</select>
+	
+	<insert id="insert" parameterType="snsDTO">
+		insert into sns(num,writer,content,reg) values(sns_seq.nextval,#{writer},#{content},sysdate)
+	</insert>
+	
+	<select id="maxNum" resultType="int">
+		select max(num) from sns
+	</select>
+	
+	<insert id="imgInsert" parameterType="snsImgDTO">
+		insert into snsimg values(sns_seq.nextval,#{snsnum},#{orgname},#{sysname})
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
