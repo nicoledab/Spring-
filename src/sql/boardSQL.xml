@@ -6,6 +6,6 @@
 
  	<select id="list" resultType="BoardDataBean">
   	   select * from board
-  	</select>
+  	</select> 
   
   </mapper>
