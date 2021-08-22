@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Controller
 @RequestMapping("/file/")
-public class FileBean {
+public class FileBean { 
 	
 	@RequestMapping("uploadForm.do")
 	public String form() {
@@ -19,11 +19,11 @@ public class FileBean {
 	@RequestMapping("uploadPro.do")
 	public String pro(String name , MultipartHttpServletRequest ms) {
 		
-		MultipartFile mf = ms.getFile("save");  //ÆÄÀÏ ¿øº»
-		String fileName = mf.getOriginalFilename(); // ÆÄÀÏ ¿øº» ÀÌ¸§ ²¨³¿ 
-		File f = new File("c://save//"+fileName); // º¹»ç À§Ä¡ 
+		MultipartFile mf = ms.getFile("save");  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		String fileName = mf.getOriginalFilename(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+		File f = new File("c://save//"+fileName); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ 
 		  try {
-			  mf.transferTo(f); // º¹»ç 
+			  mf.transferTo(f); // ï¿½ï¿½ï¿½ï¿½ 
 		  }catch(Exception e) {
 			  e.printStackTrace();
 		  }
